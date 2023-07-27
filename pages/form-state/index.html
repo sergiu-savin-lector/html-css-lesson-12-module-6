@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/reset.css" />
+    <link rel="stylesheet" href="../../styles/fonts.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+    <link rel="stylesheet" href="../../styles/forms.css" />
+
+    <title>HTML/CSS Modulul 6 - Lectia 12</title>
+    <style></style>
+  </head>
+  <body>
+    <main class="container example-page">
+      <h1 class="heading-primary sticky">Validare pe client</h1>
+      <article>
+        <p>
+          Există două tipuri diferite de validare pe partea clientului pe care
+          le veți întâlni pe web:
+        </p>
+        <ul class="bullet-list">
+          <li>
+            Validarea încorporată a formularelor folosește funcțiile de validare
+            a formularelor HTML, despre care am discutat în multe locuri de-a
+            lungul acestui modul. Această validare, în general, nu necesită prea
+            mult JavaScript. Validarea încorporată a formularelor are
+            performanțe mai bune decât JavaScript, dar nu este la fel de
+            personalizabilă ca validarea JavaScript.
+          </li>
+          <li>
+            Validarea JavaScript este codificată folosind JavaScript. Această
+            validare este complet personalizabilă, dar trebuie să o creați pe
+            toate (sau să utilizați o bibliotecă).
+          </li>
+        </ul>
+      </article>
+      <section class="lesson-example mt-lg">
+        <form class="form">
+          <label class="form-group">
+            <span>Nume:</span>
+            <input
+              class="input"
+              name="name"
+              type="text"
+              minlength="2"
+              required
+              oninvalid="this.setCustomValidity('Adauga numele tau aici')"
+              oninput="this.setCustomValidity('')"
+            />
+          </label>
+          <label class="form-group">
+            <span>Varsta:</span>
+            <input
+              class="input"
+              name="age"
+              type="number"
+              required
+              min="18"
+              max="130"
+              oninvalid="this.setCustomValidity('Adauga varsta ta aici')"
+              oninput="this.setCustomValidity('')"
+            />
+          </label>
+          <div class="form-controls">
+            <button class="btn-submit" type="submit">Trimite</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

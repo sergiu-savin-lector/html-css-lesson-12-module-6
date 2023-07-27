@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/reset.css" />
+    <link rel="stylesheet" href="../../styles/fonts.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+
+    <title>Intrebari</title>
+    <style>
+      .pizza-input + .error {
+        display: none;
+      }
+
+      .pizza-input:invalid + .error {
+        display: inline-flex;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container example-page">
+      <form name="pizza-order">
+        <h2>Pizza</h2>
+        <label>
+          <span>Pizza</span>
+          <input
+            type="number"
+            name="pizza"
+            min="1"
+            max="12"
+            title="Prea multe pizza"
+          />
+        </label>
+        <label class="mt-lg">
+          <span>Pizza Pattern</span>
+          <input
+            class="pizza-input"
+            type="text"
+            name="pattern"
+            pattern="\b(0*(?:[1-9][0-9]?|100))\b"
+            title="Prea multe pizza"
+            required
+          />
+          <span class="error">Text Invalid</span>
+        </label>
+
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/reset.css" />
+    <link rel="stylesheet" href="../../styles/fonts.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+    <link rel="stylesheet" href="../../styles/forms.css" />
+
+    <title>HTML/CSS Modulul 6 - Lectia 12</title>
+    <style>
+      .form-group {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+      }
+
+      input {
+        padding: 8px 16px;
+        outline: none;
+        border: 1px solid darkgrey;
+      }
+
+      .checkbox-container {
+        cursor: pointer;
+        width: fit-content;
+        justify-content: center;
+      }
+
+      .checkbox-container input[type="checkbox"] {
+        display: none;
+      }
+
+      .checkbox-text {
+        transition: color 250ms ease-in-out, font-weight 250ms ease-in-out;
+      }
+
+      .checkbox-icon {
+        fill: black;
+        position: relative;
+        height: 32px;
+        width: 32px;
+      }
+
+      .checkbox-icon > svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 16px;
+        height: 17px;
+        transition: fill 250ms ease-in-out;
+      }
+
+      /* Atunci cand input-ul ascuns este bifat, se aplica stilul pentru iconita */
+      .checkbox-container input[type="checkbox"]:checked ~ .checkbox-icon {
+        fill: blue;
+      }
+
+      .checkbox-container input[type="checkbox"]:checked ~ .checkbox-text {
+        color: blue;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container example-page">
+      <h1 class="heading-primary sticky">Checkbox cu SVG</h1>
+      <section class="lesson-example mt-lg">
+        <form class="form mt-lg" name="Test">
+          <h2>Alege zilele</h2>
+          <div>
+            <label class="form-group checkbox-container">
+              <input
+                class="checkbox-input"
+                name="day"
+                type="checkbox"
+                value="luni"
+              />
+              <span class="checkbox-text">Luni</span>
+              <i class="checkbox-icon">
+                <svg>
+                  <use xlink:href="#check"></use>
+                </svg>
+              </i>
+            </label>
+            <label class="form-group checkbox-container">
+              <input
+                class="checkbox-input"
+                name="day"
+                type="checkbox"
+                value="marti"
+              />
+              <span class="checkbox-text">Marti</span>
+              <i class="checkbox-icon">
+                <svg>
+                  <use xlink:href="#check"></use>
+                </svg>
+              </i>
+            </label>
+            <label class="form-group checkbox-container">
+              <input
+                class="checkbox-input"
+                name="day"
+                type="checkbox"
+                value="miercuri"
+              />
+              <span class="checkbox-text">Miercuri:</span>
+              <i class="checkbox-icon">
+                <svg>
+                  <use xlink:href="#check"></use>
+                </svg>
+              </i>
+            </label>
+          </div>
+          <div class="form-controls">
+            <button class="btn-submit" type="submit">Trimite</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <svg class="checkbox-symbol" xmlns="http://www.w3.org/2000/svg">
+      <symbol
+        id="check"
+        preserveAspectRatio="xMidYMid"
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+      >
+        <path
+          d="M8.500,0.000 L11.301,5.028 L16.999,6.112 L13.033,10.302 L13.753,16.000 L8.500,13.561 L3.247,16.000 L3.967,10.302 L0.001,6.112 L5.699,5.028 L8.500,0.000"
+        />
+      </symbol>
+    </svg>
+  </body>
+</html>

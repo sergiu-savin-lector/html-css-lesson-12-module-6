@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/reset.css" />
+    <link rel="stylesheet" href="../../styles/fonts.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+    <link rel="stylesheet" href="../../styles/forms.css" />
+
+    <title>HTML/CSS Modulul 6 - Lectia 12</title>
+    <style>
+      label {
+        display: block;
+        margin-top: 1em;
+      }
+
+      label:focus-within {
+        font-weight: bold;
+        color: blue;
+      }
+
+      .form-with-focus {
+        border: 1px solid;
+        color: gray;
+        padding: 16px 32px;
+        max-width: 300px;
+      }
+
+      .form-with-focus:focus-within {
+        background: #ff8;
+        color: black;
+      }
+
+      .form-with-focus label {
+        display: flex;
+        gap: 16px;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container example-page">
+      <h1 class="heading-primary sticky">Proprietatea focus:within</h1>
+      <section class="lesson-example mt-lg">
+        <form>
+          <p>Ce aroma vreti la inghetata?</p>
+          <label>Nume: <input name="firstName" type="text" /></label>
+          <label>
+            Aroma:
+            <select name="flavor">
+              <option value="cap">Capsuni</option>
+              <option value="van">Vanilie</option>
+              <option value="ciocolata">Ciocolata</option>
+            </select>
+          </label>
+        </form>
+        <form class="form-with-focus mt-lg">
+          <label> <span> Nume </span><input type="text" name="nume" /> </label>
+          <label>
+            <span> Prenume </span><input type="text" name="prenume" />
+          </label>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

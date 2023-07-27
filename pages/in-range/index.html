@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/reset.css" />
+    <link rel="stylesheet" href="../../styles/fonts.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+    <link rel="stylesheet" href="../../styles/forms.css" />
+
+    <title>HTML/CSS Modulul 6 - Lectia 12</title>
+    <style>
+      input {
+        border: 1px solid black;
+      }
+
+      input:in-range {
+        background-color: rgba(0, 255, 0, 0.25);
+      }
+
+      input:out-of-range {
+        background-color: rgba(255, 0, 0, 0.25);
+        border: 2px solid red;
+      }
+
+      input:in-range + span::after {
+        content: "Valoarea este ok.";
+      }
+
+      input:out-of-range + span::after {
+        content: "Valoarea este in afara intervalului";
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container example-page">
+      <h1 class="heading-primary sticky">In-range / Out-of-range</h1>
+      <section class="lesson-example mt-lg">
+        <form action="" id="form1">
+          <p>Values between 1 and 10 are valid.</p>
+          <ul>
+            <li>
+              <label>
+                <span>Varsta</span>
+                <input
+                  id="value1"
+                  name="value1"
+                  type="number"
+                  placeholder="1 to 10"
+                  min="1"
+                  max="10"
+                  value="12"
+                />
+                <span for="value1"></span>
+              </label>
+            </li>
+          </ul>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
